@@ -19,7 +19,14 @@ class Application
         resp.write "#{cart_item}\n"
       end
     elsif req.path.match(/add/)
-      new_item = req.params["item"]
+      requested_item = req.params["item"]
+      if @@items.include?(requested_item)
+        @@cart << requested_item
+        return "#{requested_item} has been added to your cart."
+      else
+        return "#{requested_item} is not available."
+      end
+        
       resp.write handle_search(search_term)
       end
       
