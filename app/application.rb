@@ -19,7 +19,7 @@ class Application
         resp.write "#{cart_item}\n"
       end
     elsif req.path.match(/add/)
-      search_term = req.params["GET"]
+      search_term = req.params["item"]
       resp.write handle_search(search_term)
       end
       
