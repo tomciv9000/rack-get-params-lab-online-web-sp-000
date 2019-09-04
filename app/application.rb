@@ -18,6 +18,10 @@ class Application
       @@cart.each do |cart_item|
         resp.write "#{cart_item}\n"
       end
+    elsif req.path.match(/add/)
+      search_term = req.params["GET"]
+      resp.write handle_search(search_term)
+      end
       
     else
       resp.write "Path Not Found"
