@@ -17,7 +17,6 @@ class Application
     elsif req.path.match(/cart/)
        @@cart.empty?
         return "Your cart is empty"
-      else  
         @@cart.each do |cart_item|
           resp.write "#{cart_item}\n"
         end
