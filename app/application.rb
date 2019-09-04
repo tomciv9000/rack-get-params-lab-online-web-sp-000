@@ -21,6 +21,7 @@ class Application
         @@cart.each do |cart_item|
           resp.write "#{cart_item}\n"
         end
+      end  
     elsif req.path.match(/add/)
       requested_item = req.params["item"]
       if @@items.include?(requested_item)
