@@ -26,14 +26,9 @@ class Application
       else
         return "#{requested_item} is not available."
       end
-        
-      resp.write handle_search(search_term)
-      end
-      
     else
       resp.write "Path Not Found"
     end
-
     resp.finish
   end
 
